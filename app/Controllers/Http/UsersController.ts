@@ -9,7 +9,7 @@ export default class UsersController {
     public async registerStudent({request}: HttpContextContract){
       try {
 
-        const {firstName, secondName, surname, secondSurName, typeDocument, documentNumber, email, password, phone} = request.all();
+        const {firstName, secondName, surname, secondSurName, typeDocument, documentNumber, email, password, phone,rol} = request.all();
         const salt = bcryptjs.genSaltSync();
         const user = new User();
         user.first_name = firstName;
@@ -20,7 +20,7 @@ export default class UsersController {
         user.document_number = documentNumber
         user.email = email
         user.password = bcryptjs.hashSync( password, salt )
-        user.role_id = 1
+        user.role_id = rol
         user.phone = phone
           
         await user.save();

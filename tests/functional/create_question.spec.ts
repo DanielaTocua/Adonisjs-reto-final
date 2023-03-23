@@ -29,12 +29,8 @@ test('create question', async ({ client }) => {
 })
 })
 
-test('create question Error', async ({ client }) => {
-    const error_body = {
-      "question": 1,
-  }
-  
-    const error_response = await client.post('/api/v1/questions/create').json(error_body)
+test('create question Error', async ({ client }) => {  
+    const error_response = await client.post('/api/v1/questions/create').json({})
     
   
     error_response.assertBody({

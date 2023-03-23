@@ -10,6 +10,7 @@ test('create Student', async ({ client }) => {
     "documentNumber": "123456789",
     "email": "danielc88@gmail.co",
     "password": "aaa",
+    "rol":2,
     "phone": "32123122314"
 }
   const response = await client.post('/api/v1/user/create').json(body)
