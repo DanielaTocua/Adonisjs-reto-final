@@ -1,0 +1,36 @@
+/api/v1/user/getUser/{id}:
+  get:
+    tags:
+      - User
+    security: []
+    description: obtener usuario por id
+    parameters:
+      - in: path
+        name: id
+        schema: 
+          type: integer
+        required: true
+        description: Id del usuario a modificar
+        example: 1
+                
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/definitions/User"
+                           
+            example:
+              firstName: "daniel"
+              secondName: "jose"
+              surname: "cruz"
+              secondSurName: "casallas"
+              typeDocument: 1
+              documentNumber: 123456789
+              email: "danielc88@gmail.co,"
+              phone: "32123122314"
+              
+            
+

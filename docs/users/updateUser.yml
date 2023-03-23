@@ -1,24 +1,30 @@
-/api/v1/user/create:
-  post:
+/api/v1/user/update/{id}:
+  put:
     tags:
       - User
     security: []
-    description: Crear usuario
+    description: modificar usuario
+    parameters:
+      - in: path
+        name: id
+        schema: 
+          type: integer
+        required: true
+        description: Id del usuario a modificar
+        example: 1
     requestBody:
       content:
         application/json:
           schema:
             $ref: '#/definitions/User'
           example:
-            firstName: "danilo"
-            secondName: "antonio"
+            firstName: "daniel"
+            secondName: "jose"
             surname: "cruz"
             secondSurName: "casallas"
             typeDocument: 1
             documentNumber: "123456789"
             email: "danielc88@gmail.co"
-            password: "aaa"
-            rol: 2
             phone: "32123122314"
     responses:
       200:
@@ -34,4 +40,4 @@
                   type: string
                            
             example:
-              { "state": true, "message":"Estudiante creado correctamente" }
+              { "state": true, "message":"Se actualizó correctamente" }

@@ -1,0 +1,46 @@
+/api/v1/login:
+  post:
+    tags:
+      - User
+    security: []
+    description: iniciar sesión
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email: 
+                type: string
+              password: 
+                type: string
+          example:
+            email: "danielc88@gmail.co"
+            password: "aaa"
+            
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: Object
+              properties:
+                state:
+                  type: boolean
+                id: 
+                  type: number
+                name: 
+                  type: string  
+                message:
+                  type: string
+                           
+            example:
+              state: true
+              id: 1
+              name: "jose daniel cruz casallas"
+              role: "estudiante"
+              message: "Ingreso exitoso"
+
+            
+

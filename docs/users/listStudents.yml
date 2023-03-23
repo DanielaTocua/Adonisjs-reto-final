@@ -3,23 +3,24 @@
     tags:
       - User
     security: []
-    description: Crear usuario
+    description: listar estudiantes
     requestBody:
       content:
         application/json:
           schema:
-            type: Object
+            type: object
             properties:
               perPage:
                 type: number
               page:
                 type: number
               filter:
-                type: Object
-                name: 
-                  type: string 
-                surname:
-                  type: string
+                type: object
+                properties:
+                  name: 
+                    type: string 
+                  surname:
+                   type: string
           example:
             perPage: 10
             page: 1
@@ -33,10 +34,10 @@
         content:
           application/json:
             schema:
-              type: Object
+              type: object
               properties:
                 state:
-                  type: number  
+                  type: boolean 
                 message:
                   type: string
                 users: 
