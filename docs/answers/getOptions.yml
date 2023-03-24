@@ -1,0 +1,45 @@
+/api/v1/questions/getOptions/{id}:
+  get:
+    tags:
+      - Forms
+    security: []
+    description: obtener opciones por id de pregunta
+    parameters:
+      - in: path
+        name: id
+        schema: 
+          type: integer
+        required: true
+        description: Id de la pregunta a consultar 
+        example: 1
+                
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean 
+                options:
+                  type: array
+                  items:
+                    type: object
+                    properties: 
+                      id:
+                        type: number
+                      option:
+                        type: string
+                           
+            example:
+              state: true
+              options:
+              - option: "Correcta"
+                id: 4
+              - question: "Incorrecta"
+                id: 5
+              
+            
+

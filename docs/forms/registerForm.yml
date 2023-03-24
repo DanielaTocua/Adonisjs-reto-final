@@ -1,0 +1,36 @@
+/api/v1/form/postquestions:
+  post:
+    tags:
+      - Forms
+    security: []
+    description: Asignar respuestas a los usuarios
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object 
+            properties:
+              estudianteId:
+                type: integer
+              answers:
+                type: array
+                items:
+                  type: integer
+          example:
+            estudianteId: 1
+            answers: [1,2]
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean 
+                message:
+                  type: string
+                           
+            example:
+              { "state": true, "message":"Respuestas almacenadas con éxito" }

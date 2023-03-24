@@ -1,0 +1,39 @@
+/api/v1/questions/updateQuestion/{id}:
+  put:
+    tags:
+      - Question
+    security: []
+    description: modificar pregunta
+    parameters:
+      - in: path
+        name: id
+        schema: 
+          type: integer
+        required: true
+        description: Id de la pregunta a modificar
+        example: 1
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              question: 
+                type: string
+          example:
+            question: "¿En qué mes estamos?"
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean 
+                message:
+                  type: string
+                           
+            example:
+              { "state": true, "message":"Pregunta editada con éxito" }

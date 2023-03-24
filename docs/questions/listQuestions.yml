@@ -1,0 +1,35 @@
+/api/v1/questions/getQuestions:
+ get:
+    tags:
+      - Question
+    security: []
+    description: listar preguntas
+            
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean 
+                questions:
+                  type: array
+                  items:
+                    type: object
+                    properties: 
+                      question:
+                        type: string
+                      id:
+                        type: number
+                           
+            example:
+              state: true
+              questions:
+              - question: "¿Qué día es hoy?"
+                id: 4
+              - question: "¿En qué mes del año estás?"
+                id: 5
+

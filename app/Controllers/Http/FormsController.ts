@@ -28,7 +28,6 @@ export default class FormsController {
       }
     public async listQuestionsAndAnswers(){
         try{
-          console.log("hey")
           let list = await Question.query().preload('options',(builder)=>{
             builder.select('id','answer')          
           }).select('id','question')

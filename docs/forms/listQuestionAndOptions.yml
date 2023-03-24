@@ -1,0 +1,56 @@
+/api/v1/form/getquestions:
+ get:
+    tags:
+      - Forms
+    security: []
+    description: listar preguntas y respuestas
+            
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean 
+                questions:
+                  type: array
+                  items:
+                    type: object
+                    properties: 
+                      question:
+                        type: string
+                      id:
+                        type: number
+                      options:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id: 
+                              type: integer
+                            option: 
+                              type: string
+                  
+                           
+            example:
+              state: true
+              questions:
+              - question: "¿Qué día es hoy?"
+                id: 4
+                options:
+                  - id: 1
+                    option: "Lunes"
+                  - id: 2 
+                    option: "Martes"
+
+              - question: "¿En qué mes del año estás?"
+                id: 5
+                options:
+                  - id: 3
+                    option: "Enero"
+                  - id: 4
+                    option: "Febrero" 
+

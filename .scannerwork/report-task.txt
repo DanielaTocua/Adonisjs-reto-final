@@ -2,5 +2,5 @@ projectKey=reto-final-wtests-3
 serverUrl=http://localhost:9000
 serverVersion=9.9.0.65466
 dashboardUrl=http://localhost:9000/dashboard?id=reto-final-wtests-3
-ceTaskId=AYcPSzQM9yMl2IKLPE1R
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcPSzQM9yMl2IKLPE1R
+ceTaskId=AYcRQuty9yMl2IKLPE1S
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcRQuty9yMl2IKLPE1S

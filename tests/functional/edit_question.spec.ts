@@ -5,8 +5,7 @@ import Question from 'App/Models/Question'
 test('edit questions', async ({ client }) => {
   const id = (await Question.firstOrFail()).id
   const body ={
-    "question": "¿Qué día es hoy?",
-    "iscorrect": true
+    "question": "¿Qué día es hoy?"
   }
   const response = await client.put(`/api/v1/questions/updateQuestion/${id}`).json(body)
   
